@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./17.09.css" rel="stylesheet">
+  <title>Title</title>
+    <style>
+.container1 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: black;
+  animation-name: test1;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+}
+  @keyframes test1 {
+    0% {
+      border-radius: 50%;
+    }
+    10% {
+      background-color: red;
+    }
+
+    0% {
+      border-radius: 50%;
+    }
+  }
+.container2 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: black;
+  animation-name: test2;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+}
+@keyframes test2 {
+  0% {
+    border-radius: 50%;
+  }
+  50% {
+    background-color: yellow;
+  }
+  0% {
+    border-radius: 50%;
+  }
+}
+.container3 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: black;
+  animation-name: test3;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+}
+@keyframes test3 {
+  0% {
+    border-radius: 50%;
+  }
+  100% {
+    background-color: green;
+  }
+  0% {
+    border-radius: 50%;
+  }
+}
+    </style>
+  </head>
+<body>
+<div class="container1"></div>
+<div class="container2"></div>
+<div class="container3"></div>
+  </body>
+</html>
