@@ -35,7 +35,14 @@ let yPos = 150;
 
 const grav = 1.5;
 
-function draw() {
 
+function draw() {
     ctx.drawImage(bg, 0, 0);
+
+    for (let i = 0; i < pipe.length; i++) {
+        ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
+        ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
+
+        pipe[i].x--;
+    }
 }
