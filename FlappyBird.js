@@ -15,14 +15,12 @@ pipeBottom.src = "https://itproger.com/img/news/flappy_bird_pipeBottom.png";
 
 const gap = 90;
 
-// При нажатии на какую-либо кнопку
 document.addEventListener("keydown", moveUp);
 
 function moveUp() {
     yPos -= 25;
 }
 
-// Создание блоков
 const pipe = [];
 
 pipe[0] = {
