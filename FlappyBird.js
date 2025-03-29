@@ -1,4 +1,4 @@
-const cvs = document.getElementsByTagName("canvas");
+const cvs = document.getElementById("canvas");
 const ctx = cvs.getContext("2d");
 
 const bird = new Image();
@@ -16,7 +16,7 @@ pipeBottom.src = "https://itproger.com/img/news/flappy_bird_pipeBottom.png";
 document.addEventListener("keydown", moveUp);
 
 function moveUp() {
-    yPos -= 25;
+    yPos -= 40;
 }
 
 const pipe = [];
