@@ -67,6 +67,17 @@ function draw() {
             
         }
     }
+    
+  ctx.drawImage(fg, 0, cvs.height - fg.height);
+  ctx.drawImage(bird, xPos, yPos);
+
+  yPos += grav;
+
+  ctx.fillStyle = "#000";
+  ctx.font = "24px Verdana";
+  ctx.fillText("Score: " + score, 10, cvs.height - 20);
+
+  requestAnimationFrame(draw);
 }
 
 pipeBottom.onload = draw;
