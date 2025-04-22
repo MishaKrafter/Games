@@ -16,7 +16,7 @@ pipeBottom.src = "https://itproger.com/img/news/flappy_bird_pipeBottom.png";
 document.addEventListener("keydown", moveUp);
 
 function moveUp() {
-    yPos -= 40;
+    yPos -= 44;
 }
 
 const pipe = [];
