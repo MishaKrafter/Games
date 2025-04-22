@@ -34,6 +34,7 @@ let xPos = 10;
 let yPos = 150;
 
 function draw() {
+    
     ctx.drawImage(bg, 0, 0);
 
     for (let i = 0; i < pipe.length; i++) {
@@ -42,6 +43,9 @@ function draw() {
         ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
 
         pipe[i].x--;
+
+        ctx.drawImage(fg, 0, cvs.height - fg.height);
+        ctx.drawImage(bird, xPos, yPos);
         
         if(pipe[i].x === 100) {
             
@@ -55,7 +59,7 @@ function draw() {
         if(xPos + bird.width >= pipe[i].x
             && xPos <= pipe[i].x + pipeUp.width
             && (yPos <= pipe[i].y + pipeUp.height
-            || yPos + bird.height >= pipe[i].y + pipeUp.height + gap) || yPos + bird.height >= cvs.height - fg.height) {
+            || yPos + bird.height >= pipe[i].y + pipeUp.height + gap) || yPos + bird.height >= cvs.height - fg.height || yPos <= 0) {
 
             location.reload();
 
@@ -67,9 +71,6 @@ function draw() {
             
         }
     }
-    
-  ctx.drawImage(fg, 0, cvs.height - fg.height);
-  ctx.drawImage(bird, xPos, yPos);
 
   yPos += grav;
 
