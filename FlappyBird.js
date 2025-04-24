@@ -56,7 +56,7 @@ function updateDifficulty() {
         gap = 95;
     }
 
-    else if (score >= 50 && score < 75) {
+    else if (score >= 50) {
         difficulty = 4;
         grav = 2.25;
         gap = 90;
