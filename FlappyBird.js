@@ -47,7 +47,7 @@ function draw() {
         ctx.drawImage(fg, 0, cvs.height - fg.height);
         ctx.drawImage(bird, xPos, yPos);
 
-        if(pipe[i].x === 110) {
+        if(pipe[i].x === 100) {
 
             pipe.push({
                 x : cvs.width,
