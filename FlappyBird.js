@@ -28,11 +28,40 @@ pipe[0] = {
 let score = 0;
 let bestScore = localStorage.getItem("bestScore") || 0;
 
-const gap = 100;
+let gap = 110;
 let grav = 1.5;
 
 let xPos = 10;
 let yPos = 150;
+
+let difficulty = 0;
+
+function updateDifficulty() {
+
+    if (score >= 10 && score < 20) {
+        difficulty = 1;
+        grav = 1.75;
+        gap = 105;
+    }
+
+    else if (score >= 20 && score < 35) {
+        difficulty = 2;
+        grav = 2;
+        gap = 100;
+    }
+
+    else if (score >= 35 && score < 50) {
+        difficulty = 3;
+        grav = 2.25;
+        gap = 95;
+    }
+
+    else if (score >= 50 && score < 75) {
+        difficulty = 4;
+        grav = 2.25;
+        gap = 90;
+    }
+}
 
 function draw() {
     ctx.drawImage(bg, 0, 0);
@@ -69,6 +98,7 @@ function draw() {
         if(pipe[i].x === 5) {
 
             score++;
+            updateDifficulty();
 
             if (score > bestScore) {
                 bestScore = score;
@@ -80,13 +110,13 @@ function draw() {
     yPos += grav;
 
     ctx.fillStyle = "#000";
-    ctx.font = "24px Verdana";
+    ctx.font = "30px Аvеnіr Nехt W1G";
 
-    ctx.fillText("Score: " + score, 10, cvs.height - 20);
-    ctx.fillText("Best: " + bestScore, 10, cvs.height - 50);
+    ctx.fillText("Score: " + score, 5, cvs.height - 20);
+    ctx.fillText("Best: " + bestScore, 5, cvs.height - 50);
+    ctx.fillText("Difficulty: " + difficulty, 130, cvs.height - 20);
 
     requestAnimationFrame(draw);
-
 }
 
 pipeBottom.onload = draw;
